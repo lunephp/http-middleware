@@ -4,7 +4,7 @@
 namespace Lune\Http\Middleware;
 
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class Frame implements FrameInterface
@@ -23,7 +23,7 @@ class Frame implements FrameInterface
 
     }
 
-    public function handle(RequestInterface $request):ResponseInterface
+    public function handle(ServerRequestInterface $request):ResponseInterface
     {
         $handler = $this->stack->get($this->index);
         return $handler->handle($request, $this->next(), $this->stack->getParameters());

@@ -4,7 +4,7 @@
 namespace Lune\Http\Middleware;
 
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use OutOfRangeException;
 use Lune\Http\Middleware\Middleware\ResponseProvider;
@@ -47,7 +47,7 @@ class Stack implements StackInterface
         throw new OutOfRangeException("Invalid index: {$index}");
     }
 
-    public function execute(RequestInterface $request, ResponseInterface $response, array $parameters = [])
+    public function execute(ServerRequestInterface $request, ResponseInterface $response, array $parameters = [])
     {
         $stack = clone $this;
         $stack->setParameter($parameters);

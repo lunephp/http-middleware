@@ -4,7 +4,7 @@
 namespace Lune\Http\Middleware;
 
 
-use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 interface StackInterface
@@ -15,7 +15,7 @@ interface StackInterface
 
     public function get(int $index):MiddlewareInterface;
 
-    public function execute(RequestInterface $request, ResponseInterface $response, array $parameters = []);
+    public function execute(ServerRequestInterface $request, ResponseInterface $response, array $parameters = []);
 
     public function hasParameter($name):bool;
 
