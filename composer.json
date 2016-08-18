@@ -1,0 +1,32 @@
+{
+  "name": "lune/http-middleware",
+  "description": "HTTP Middleware",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Willem Wollebrants",
+      "email": "willem@studiow.be"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "lune/variables": "^0.2.0",
+    "psr/http-message": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.5",
+    "zendframework/zend-diactoros": "^1.3",
+    "league/container": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lune\\Http\\Middleware\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lune\\Http\\Middleware\\Tests\\": "tests"
+    }
+  }
+}
